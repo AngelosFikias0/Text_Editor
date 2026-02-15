@@ -1,4 +1,4 @@
-# 📝 Python Text Editor (Tkinter)
+# Python Text Editor (Tkinter)
 
 > **A lightweight, customizable desktop text editor built with Python and Tkinter. Designed for simplicity and cross-platform utility.**
 
