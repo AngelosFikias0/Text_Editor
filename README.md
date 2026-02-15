@@ -1,43 +1,96 @@
-### Python Text Editor
+# 📝 Python Text Editor (Tkinter)
 
-This is a simple text editor built with Python using the Tkinter library. The editor allows users to open, edit, and save text files. It also includes features for changing text and background colors, selecting different fonts, and adjusting font sizes.
+> **A lightweight, customizable desktop text editor built with Python and Tkinter. Designed for simplicity and cross-platform utility.**
 
-#### Features
+This application provides a clean interface for handling `.txt` and `.html` files, offering a personalized writing experience through dynamic font and color customization.
 
--   Open and save `.txt` and `.html` files.
--   Change fonts from a list of available system fonts.
--   Adjust font sizes ranging from 8 to 72.
--   Customize text and background colors.
--   Clear the text content easily with a delete function.
--   An "About" section provides information about the program.
--   Keyboard shortcuts:
-    -   `Ctrl+O`: Open a file.
-    -   `Ctrl+S`: Save the current file.
-    -   `Ctrl+D`: Delete all text.
+---
 
-#### Installation
+## 📌 System Overview
 
-1.  Ensure you have Python installed on your system.
-2.  Download the text editor Python script.
-3.  Run the Python script to open the text editor.
+The application is built on the **Model-View-Controller (MVC)** pattern logic within a single-threaded GUI loop:
 
-#### How to Use
+```text
+       [ User Interface (Tkinter) ]
+                   |
+        /----------+----------\
+        |          |          |
+ [ File I/O ]  [ Format ]  [ Events ]
+     |             |          |
+ (Open/Save)   (Fonts/Size) (Shortcuts)
+     |             |          |
+     \----------+----------/
+                |
+        [ OS File System ]
+```
 
-1.  Open the text editor application.
-2.  Use the **File** menu to open or save `.txt` or `.html` files.
-3.  Use the **Edit** menu to change the text or background colors.
-4.  Use the **Format** menu to change the font or adjust the font size.
-5.  To delete all text, use the **Delete** option from the **File** menu or press `Ctrl+D`.
+* **Frontend:** Tkinter standard GUI library.
+* **Backend:** Python 3.x logic for file stream handling.
+* **Configuration:** Dynamic system font retrieval and hex-color mapping.
 
-#### Requirements
+---
 
--   Python 3.x
--   Tkinter (pre-installed with most Python distributions)
+## 🚀 Features
 
-#### License
+### 🛠 File Management
+* **Broad Support:** Open and save both `.txt` and `.html` files.
+* **Quick Clear:** Instant "Delete All" function via menu or shortcut.
+* **Native Dialogs:** Uses standard OS file explorers for a familiar experience.
 
-This project is free to use and open-source.
+### 🎨 Customization (Format & Edit)
+* **Typography:** Choose from a list of available system fonts.
+* **Scaling:** Adjust font sizes ranging from **8** to **72** pt.
+* **Themes:** Full customization of **Text Color** and **Background Color** via a color picker.
 
-#### About the Author
+### ⌨️ Keyboard Shortcuts
+| Shortcut | Action |
+| :--- | :--- |
+| `Ctrl + O` | Open an existing file |
+| `Ctrl + S` | Save current work |
+| `Ctrl + D` | Clear the entire editor |
 
-This program was created by Angelos Fikias.
+---
+
+## 🧰 Requirements
+
+* **Python 3.x**
+* **Tkinter:** Usually pre-installed with Python (if missing on Linux, install via `sudo apt-get install python3-tk`).
+
+---
+
+## 🛠 Installation & Usage
+
+### 1️⃣ Download
+Ensure you have Python installed, then clone or download the script:
+```bash
+git clone [https://github.com/AngelosFikias0/Python_Text_Editor.git](https://github.com/AngelosFikias0/Python_Text_Editor.git)
+cd Python_Text_Editor
+```
+
+### 2️⃣ Run the Editor
+```bash
+python text_editor.py
+```
+
+### 3️⃣ Usage Tips
+* Use the **File** menu to manage your documents.
+* Access **Format** to change font family and size.
+* Use the **Edit** menu to toggle colors for a "Dark Mode" or high-contrast experience.
+
+---
+
+## 📚 Technical Highlights
+
+* **Event Binding:** Implemented `root.bind` to map physical keyboard keys to Python functions.
+* **Resource Management:** Safe file stream handling using `askopenfilename` and `asksaveasfilename`.
+* **System Integration:** Dynamically fetches `font.families()` to ensure compatibility across Windows, macOS, and Linux.
+
+---
+
+## 📄 License & About
+
+* **License:** This project is open-source and free to use.
+* **Author:** Created by **Angelos Fikias**.
+
+---
+*Developed as a practical study in Python GUI development and event-driven programming.*
